@@ -8,3 +8,6 @@ class TestPage(TemplateView):
 
 class ThanksPage(TemplateView):
     template_name='thanks.html'
+
+class LinksPage(TemplateView):
+    template_name='links.html'

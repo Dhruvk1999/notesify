@@ -16,7 +16,7 @@ class Post(models.Model):
     book_name=models.CharField(max_length=128,default='',blank=True) 
     subject_name=models.CharField(max_length=128,default='',blank=True)  
                                                                                 # change blank to false later
-    message_html=models.TextField(editable=True)
+    message_html=models.TextField(editable=True,default='')
     group=models.ForeignKey(Group,related_name='posts',null=True,blank=True,on_delete=None)
 
     def __str__(self):
@@ -31,5 +31,5 @@ class Post(models.Model):
 
     class Meta:
         ordering =['-created_at']
-        unique_together=['user','message']
+        
         

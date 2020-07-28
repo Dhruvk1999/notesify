@@ -4,7 +4,7 @@
 
 {% block post_content %}
 <h2> Wanna Contribute? </h2>
-<h5>Upload Notes or a book </h5>
+<h5>Upload Your Notes !</h5>
 <form method="POST" action="{% url 'posts:create' %}" id="postForm">
 	{% csrf_token %}
 	{% bootstrap_form form %}

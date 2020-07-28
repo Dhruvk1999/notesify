@@ -29,12 +29,15 @@
 	<div class="w3-teal w3-margin-bottom"><br></div>
 	<div class="list-group">
 		{% for group in object_list %}
+		<a class="list-group-item" href="{% url 'groups:single' slug=group.slug %}">
 		<div class="w3-third w3-container w3-margin-bottom">
 			<div class="w3-container w3-white">
-		  <a class="list-group-item" href="{% url 'groups:single' slug=group.slug %}">
+		 
 			     <h3 class="title list-group-item-heading">{{ group.name }}</h3>
 			
 				{{ group.description_html|safe }}
+				<br><br>
+				<br><br>
 				
 					
 						<span class="badge">{{ group.posts.count }}</span> post{{ group.posts.count|pluralize }}
