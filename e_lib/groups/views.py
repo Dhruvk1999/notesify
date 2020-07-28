@@ -17,6 +17,7 @@ class SingleGroup(generic.DetailView):
 
 class ListGroups(generic.ListView):
     model=Group  
+    
 
 class JoinGroup(LoginRequiredMixin, generic.RedirectView):
 
