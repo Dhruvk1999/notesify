@@ -3,14 +3,27 @@ from django.contrib.auth.mixins import (LoginRequiredMixin,
                                         PermissionRequiredMixin)
 from django.urls import reverse
 from django.views import generic
-from groups.models import Group,GroupMember
+from groups.models import Group,GroupMember,Semester
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.db import IntegrityError
 from . import models
+
+
+class CreateSemester(LoginRequiredMixin,generic.CreateView):
+    fields='__all__'
+    model=Semester
+
+    def get_absolute_url(self):
+            return reverse("groups:all")
+
+
+
 class CreateGroup(LoginRequiredMixin,generic.CreateView):
-    fields=('name','description')
+    fields=('name','description','which_semester')
     model=Group
+
+
 
 class SingleGroup(generic.DetailView):
     model=Group
@@ -18,6 +31,7 @@ class SingleGroup(generic.DetailView):
 class ListGroups(generic.ListView):
     model=Group  
     
+
 
 class JoinGroup(LoginRequiredMixin, generic.RedirectView):
 

@@ -12,8 +12,8 @@ class Post(models.Model):
     user=models.ForeignKey(User,related_name='posts',on_delete=None)
     created_at=models.DateTimeField(auto_now=True)
     message=models.TextField(blank=True)
-    book_url=models.URLField(default='',blank=False)
-    book_name=models.CharField(max_length=128,default='',blank=True) 
+    notes_url=models.URLField(default='',blank=False)
+    chapter_name=models.CharField(max_length=128,default='',blank=True) 
     subject_name=models.CharField(max_length=128,default='',blank=True)  
                                                                                 # change blank to false later
     message_html=models.TextField(editable=True,default='')
@@ -30,6 +30,7 @@ class Post(models.Model):
         return reverse('posts:single',kwargs={'username':self.user.username,'pk':self.pk})
 
     class Meta:
-        ordering =['-created_at']
+        ordering =['-subject_name']
+        
         
         

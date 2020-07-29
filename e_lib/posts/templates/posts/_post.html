@@ -1,15 +1,20 @@
-<div class="post media">
+
+	<div class="w3-third w3-container w3-margin-bottom">
+		<div class="w3-container w3-white">
 	
-	<button type="button" class="btn btn-warning"><h3><a href="{{ post.book_url }}">Download</a></h3></button>
+	<button type="button" class="btn btn-warning"><h3><a href="{{ post.notes_url }}">Download</a></h3></button>
 	<div class="media-body">
-		<strong>{{ post.book_name }}</strong>
+		<strong>{{ post.chapter_name }}</strong>
+		<br>{{ post.subject_name}}
 		<h5 class="media-heading">
 			<span class="username"><a href="{% url 'posts:for_user' username=post.user.username %}">@{{ post.user.username }}</a></span>
 			
 			<time class="time"><a href="{% url 'posts:single' username=post.user.username pk=post.pk %}">{{ post.created_at }}</a></time>
+			
 			{% if post.group %}
 			
 			<span class="group-name">in <a href="#">{{ post.group.name }}</a></span>
+					
 			{% endif %}
 		</h5>
 
@@ -25,4 +30,5 @@
 			{% endif %}
 		</div>
 	</div>
+</div>
 </div>
