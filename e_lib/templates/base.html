@@ -38,24 +38,27 @@
               class="fa fa-info fa-fw w3-margin-right"></i>About</a>
       <a href="#contribute" onclick="w3_close()" class="w3-bar-item w3-button w3-padding">
         <i class="fa fa-github-alt fa-fw w3-margin-right"></i>Contribute</a>
-      {% if user.is_authenticated %}
-      <button class="w3-button w3-white">
-          <i class="fa fa-upload w3-margin-right"></i><a href="{% url 'posts:create' %}"
-              style="text-decoration: none;">Upload</a>
-      </button>
-      <button class="w3-button w3-white w3-hide-small">
-          <i class="fa fa-sign-out w3-margin-right"></i><a href="{% url 'accounts:logout' %}"
-              style="text-decoration: none;">Log out</a>
-      </button> {% else %}
+        {% if user.is_authenticated %}
+        <br>
+      <button>
+            <i class="fa fa-upload w3-margin-right"></i><a href="{% url 'posts:create' %}"
+                style="text-decoration: none;">Upload</a></button>
+        <br>
+        <button>
+            <i class="fa fa-sign-out w3-margin-right"></i><a href="{% url 'accounts:logout' %}"
+                style="text-decoration: none;">Log out</a> </button>
+        {% else %}
+        <br>
+          <button>
+            <i class="fa fa-sign-in w3-margin-right"></i><a href="{% url 'accounts:login' %}"
+                style="text-decoration: none;">Login</a></button>
+        
+          <br>
+            <button>
+            <i class="fa fa-user-plus w3-margin-right"></i><a href="{% url 'accounts:signup' %}"
+                style="text-decoration: none;">Sign-up</a></button>
+          {% endif %}
 
-      <button class="w3-button w3-white w3-hide-small">
-          <i class="fa fa-sign-in w3-margin-right"></i><a href="{% url 'accounts:login' %}"
-              style="text-decoration: none;">Login</a>
-      </button>
-      <button class="w3-button w3-white w3-hide-small">
-          <i class="fa fa-user-plus w3-margin-right"></i><a href="{% url 'accounts:signup' %}"
-              style="text-decoration: none;">Sign-up</a>
-      </button> {% endif %}
   </div>
 </nav>
 
