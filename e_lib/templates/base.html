@@ -16,7 +16,7 @@
   </head>
 
 
-  <body>
+  <body>  
     
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index: 3; width: 300px;" id="mySidebar">
   <br />
@@ -24,16 +24,38 @@
       <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-padding w3-hover-grey" title="close menu">
           <i class="fa fa-remove"></i>
       </a>
-      <img src="TODO" style="width: 45%;" class="w3-round" /><br /><br />
-      <a href="{% url 'home' %}"><h4><b>Notesify</b></h4></a>
+
+      
+      <a href="{% url 'home' %}"><button class="w3-button w3-hover-black">
+        <i class="fa fa-home"></i>
+        <b> Notesify</b></button></a>
   </div>
+
   <div class="w3-bar-block">
       <a href="#courses" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
               class="fa fa-th-large fa-fw w3-margin-right"></i>Courses</a>
       <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
               class="fa fa-info fa-fw w3-margin-right"></i>About</a>
-      <a href="#contribute" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
-              class="fa fa-github-alt fa-fw w3-margin-right"></i>Contribute</a>
+      <a href="#contribute" onclick="w3_close()" class="w3-bar-item w3-button w3-padding">
+        <i class="fa fa-github-alt fa-fw w3-margin-right"></i>Contribute</a>
+      {% if user.is_authenticated %}
+      <button class="w3-button w3-white">
+          <i class="fa fa-upload w3-margin-right"></i><a href="{% url 'posts:create' %}"
+              style="text-decoration: none;">Upload</a>
+      </button>
+      <button class="w3-button w3-white w3-hide-small">
+          <i class="fa fa-sign-out w3-margin-right"></i><a href="{% url 'accounts:logout' %}"
+              style="text-decoration: none;">Log out</a>
+      </button> {% else %}
+
+      <button class="w3-button w3-white w3-hide-small">
+          <i class="fa fa-sign-in w3-margin-right"></i><a href="{% url 'accounts:login' %}"
+              style="text-decoration: none;">Login</a>
+      </button>
+      <button class="w3-button w3-white w3-hide-small">
+          <i class="fa fa-user-plus w3-margin-right"></i><a href="{% url 'accounts:signup' %}"
+              style="text-decoration: none;">Sign-up</a>
+      </button> {% endif %}
   </div>
 </nav>
 
@@ -48,7 +70,8 @@
       <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i
               class="fa fa-bars"></i></span>
       <div class="w3-container">
-          <h1><b>Notesify | Note Sharing Webapp</b></h1>
+          <h1><b>Notesify | Notes Sharing Webapp</b></h1>
+          
           <div class="w3-section w3-padding-16">
               {% if user.is_authenticated %}
               <button class="w3-button w3-white">
@@ -68,6 +91,7 @@
                   <i class="fa fa-user-plus w3-margin-right"></i><a href="{% url 'accounts:signup' %}"
                       style="text-decoration: none;">Sign-up</a>
               </button> {% endif %}
+                
           </div>
       </div>
   </header>
