@@ -14,9 +14,7 @@
 
 			<p>Welcome to the Notes Index Page! Select your Semester to see the content!</p>
 	</div>
-	{% if user.is_authenticated %}
-	<a href="{% url 'groups:create' %}" class="btn btn-md btn-fill btn-warning"><span class="glyphicon glyphicon-plus-sign"></span> Create New Category !</a>
-	{% endif %}
+
 </div>
 {% endblock %}
 
