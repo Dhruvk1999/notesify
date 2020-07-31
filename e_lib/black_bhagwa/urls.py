@@ -26,6 +26,8 @@ urlpatterns = [
     re_path(r'^thanks',views.ThanksPage.as_view(),name='thanks'),
     re_path(r'^posts/',include('posts.urls',namespace='posts')),
     re_path(r'^groups/',include('groups.urls',namespace='groups')),
-    re_path(r'^links/',views.LinksPage.as_view(),name='links')
+    re_path(r'^links/',views.LinksPage.as_view(),name='links'),
+    re_path(r'^message/$',views.MessageBoard.as_view(),name='message'), 
+    re_path(r'^textbooks/$',views.Textbooks.as_view(),name='textbooks'),
 
 ]   

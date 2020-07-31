@@ -11,3 +11,9 @@ class ThanksPage(TemplateView):
 
 class LinksPage(TemplateView):
     template_name='links.html'
+ 
+class MessageBoard(TemplateView):
+    template_name='message_board.html'
+
+class Textbooks(TemplateView):
+    template_name='textbooks.html'
