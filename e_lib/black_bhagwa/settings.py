@@ -27,7 +27,7 @@ SECRET_KEY = '_3j+0wnitm%dx2(j0im%+a7l@-57%h2hex=t1$zdd2h0t02rik'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dhruvk.pythonanywhere.com','http://dhruvk.pythonanywhere.com']
+ALLOWED_HOSTS = ['dhruvk.pythonanywhere.com','http://dhruvk.pythonanywhere.com','localhost',]
 
 
 # Application definition
