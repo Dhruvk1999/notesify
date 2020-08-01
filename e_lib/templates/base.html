@@ -38,26 +38,7 @@
               class="fa fa-info fa-fw w3-margin-right"></i>About</a>
       <a href="#contribute" onclick="w3_close()" class="w3-bar-item w3-button w3-padding">
         <i class="fa fa-github-alt fa-fw w3-margin-right"></i>Contribute</a>
-        {% if user.is_authenticated %}
-        <br>
-      <button>
-            <i class="fa fa-upload w3-margin-right"></i><a href="{% url 'posts:create' %}"
-                style="text-decoration: none;">Upload</a></button>
-        <br>
-        <button>
-            <i class="fa fa-sign-out w3-margin-right"></i><a href="{% url 'accounts:logout' %}"
-                style="text-decoration: none;">Log out</a> </button>
-        {% else %}
-        <br>
-          <button>
-            <i class="fa fa-sign-in w3-margin-right"></i><a href="{% url 'accounts:login' %}"
-                style="text-decoration: none;">Login</a></button>
-        
-          <br>
-            <button>
-            <i class="fa fa-user-plus w3-margin-right"></i><a href="{% url 'accounts:signup' %}"
-                style="text-decoration: none;">Sign-up</a></button>
-          {% endif %}
+
 
   </div>
 </nav>
@@ -69,7 +50,7 @@
 <div class="w3-main" style="margin-left: 300px;">
   <!-- Header -->
   <header id="courses">
-      <a href="#"><img src="TODO" style="width: 65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity" /></a>
+      
       <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i
               class="fa fa-bars"></i></span>
       <div class="w3-container">
@@ -98,7 +79,7 @@
           </div>
       </div>
   </header>
-    <div class="container mycontent">
+    <div class="container mycontent"> 
 
       {% block content %}
 

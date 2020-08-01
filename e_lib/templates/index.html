@@ -82,15 +82,56 @@
     <!-- Contact Section -->
     <div class="w3-container w3-padding-large w3-teal">
         <h4 id="contribute"><b>Contribute</b></h4>
+        
         <div class="w3-row-padding w3-center w3-padding-24" style="margin: 0 -16px;">
+            <a href="https://github.com/Dhruvk1999/notesify">
             <div class="w3-third">
                 <p><i class="fa fa-github-alt w3-xxlarge w3-text-light-grey"></i></p>
-                <p>Improve <a href="https://github.com/Dhruvk1999/notesify">code</a></p>
-            </div>
-            <div class="w3-third">
-                <p><i class="fa fa-file w3-xxlarge w3-text-light-grey"></i></p>
-                <p>Share documents</p>
-            </div>
+                <p>Improve code</p>
+            </div></a>
+            {% if user.is_authenticated %}
+           
+          
+               <a href="{% url 'posts:create' %}" style="text-decoration: none;">            
+                <div class="w3-third">
+                        <p><i class="fa fa-file w3-xxlarge w3-text-light-grey"></i></p>
+                        <p>Share documents</p>
+                </div></a>
+            
+            
+ 
+            {% else %}
+            <br>
+             
+                <a href="{% url 'accounts:login' %}"style="text-decoration: none;">           
+                     <div class="w3-third">
+                    <p><i class="fa fa-file w3-xxlarge w3-text-light-grey"></i></p>
+                    <p>Share documents</p>
+                </div></a>
+            
+             
+              {% endif %}
+        
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="w3-third">
                 <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
                 <p>Booty call</p>
