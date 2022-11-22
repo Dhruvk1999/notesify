@@ -10,7 +10,7 @@ django-rest-framework==0.1.0
 djangorestframework==3.11.0
 importlib-metadata==1.7.0
 misaka==2.1.1
-Pillow==7.1.2
+Pillow==9.3.0
 pip==20.1.1
 pycparser==2.20
 python-decouple==3.3
